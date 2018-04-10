@@ -51,7 +51,7 @@
         datepicker = fixture('datepicker');
         clearButton = datepicker.root.querySelector('[part="clear-button"]');
         toggleButton = datepicker.root.querySelector('[part="toggle-button"]');
-        overlayContent = datepicker.$.overlay.shadowRoot.querySelector('#overlay-content');
+        overlayContent = datepicker.$.overlay.content.querySelector('#overlay-content');
         overlayContent.$.monthScroller.bufferSize = 0;
         overlayContent.$.yearScroller.bufferSize = 0;
       });
@@ -500,6 +500,7 @@
         it('should display buttons in correct locale', () => {
           expect(toggleButton.getAttribute('aria-label').trim()).to.equal('Kalenteri');
           expect(clearButton.getAttribute('aria-label').trim()).to.equal('Tyhjennä');
+          debugger;
           expect(overlayContent.$.todayButton.textContent.trim()).to.equal('Tänään');
           expect(overlayContent.$.cancelButton.textContent.trim()).to.equal('Peruuta');
         });
